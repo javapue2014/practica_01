@@ -1,6 +1,8 @@
 package amador;
 
-import java.util.Arrays;
+//import java.util.Arrays;
+
+import amador.Entrada;
 
 public class MainAmador {
 
@@ -12,7 +14,6 @@ public class MainAmador {
 			System.out.println();
 		}
 			
-		//System.out.println(Arrays.toString(Entrada.peticions));
 	}
 
 }

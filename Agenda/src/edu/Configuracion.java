@@ -32,6 +32,8 @@ public class Configuracion {
 		this.idiomaSort = idiomaSort;
 	}*/
 	
+	public Configuracion(){};
+	
 	public Configuracion (String x){
 		
 		try {
@@ -48,11 +50,10 @@ public class Configuracion {
 			idiomaSort=matrizConf[1];
 			
 		} catch (FileNotFoundException e) {
-		      System.out.println("No encuentro el fichero!");	
+		     Incidencias archivoNoEncontrado = new Incidencias("El fichero no ha sido encontrado");	
 			
-		} catch (IOException e) {
-				 
-				e.printStackTrace();
+		} catch (IOException e) {			 
+			Incidencias problemaConf = new Incidencias("Ha ocurrido un error en la carga de config.txt");	
 		}
 	           
 			

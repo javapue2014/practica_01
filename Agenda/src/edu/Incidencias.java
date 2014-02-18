@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Incidencias {
 	
-	File inci= new File("incidencias.log");	
+	 File inci= new File("incidencias.log");	
 	
 	public Incidencias(String x){	
 	
@@ -17,14 +17,12 @@ public class Incidencias {
 						new FileOutputStream("incidencias.log"));
 			
 				incidencia.write(x.getBytes());
-		
+				incidencia.close();
 		
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 }
 
 

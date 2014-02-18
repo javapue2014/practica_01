@@ -16,14 +16,13 @@ public class main {
 		
 		
 		
-		Configuracion conf= new Configuracion("connfig.txt");
+		Configuracion conf= new Configuracion("config.txt");		
+		Lectura idioma= new Lectura("internacional.CAT");	
+		Lectura peticiones = new Lectura("peticions.txt");	
 		
+		System.out.println(conf.getIdiomaEntr());
+		System.out.println(idioma.lista.get(1)[1].split(",")[3]);
 		
-		
-		
-		
-		
-		System.out.println(conf.getMesConf());
 		
 		
 		

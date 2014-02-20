@@ -1,9 +1,7 @@
 package amador;
 
 import java.util.*;
-
-import edu.*;
-//import eva.*;
+import ferran.Utiles;
 
 public class AssigCal {
 	
@@ -33,7 +31,7 @@ public class AssigCal {
         return calendario;
     }
     
-    public Calendar establirDia(Calendar calendario, int dia){
+    private Calendar establirDia(Calendar calendario, int dia){
         calendario.set(Calendar.DAY_OF_MONTH,dia);
         System.out.println("Dia mes: " + calendario.get(Calendar.DAY_OF_MONTH) + "Dia setmana: " + calendario.get(Calendar.DAY_OF_WEEK));
         return calendario;
@@ -42,27 +40,44 @@ public class AssigCal {
     public void assignarDiaMes(Calendar calendario){
 		Entrada ent = new Entrada();
 
-    	String [] dates = new String[3];
+		String[][] peticionsOrdenades = Utiles.sortRequest();
+
+    	String[] dates = new String[3];
+		String[] hores = new String[2];
+		
     	ini_dia_mes();
     	ini_cal_pet();
-    	
-    	
     
-		for (int i=0; i<ent.peticions.length; i++){
+		for (int i=0; i<peticionsOrdenades.length; i++){
 
 			// Obtenim el dia inici i final del rang de dates
 			// per línea de peticio
-	    	dates = ent.peticions[i][2].split("/");
+	    	dates = peticionsOrdenades[i][2].split("/");
 	    	int dia_ini = Integer.parseInt(dates[0]);
-	    	dates = ent.peticions[i][3].split("/");
+	    	dates = peticionsOrdenades[i][3].split("/");
 	    	int dia_fi = Integer.parseInt(dates[0]);
 
 	    	for (int j=0; j<ent.dies.length; j++){
+
 	    		// Obtenim els dies de la setmana
 	    		if (ent.dies[i][j] == true){
 	    			cercaDiaSetmana(calendario, j+1, dia_ini, dia_fi);
 	    		}
 	    		
+	    		// Dividim les diferents franjes horaries
+	    		String[] franja = peticionsOrdenades[i][5].split("_");
+
+	    		// Estudiem les diferents franjes horaries
+	    		for (int k=0; k<franja.length; k++){
+	    			hores = franja[i].split("-");
+	    			int hora_ini = Integer.parseInt(hores[0]);
+	    			int hora_fi = Integer.parseInt(hores[1]);
+	    			
+	    			//asignarPeticions()
+	    			
+	    			
+	    			
+	    		}
 	    		
 			}
 

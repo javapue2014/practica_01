@@ -31,7 +31,7 @@ public class main {
 		System.out.println( peticiones.lista.get(3)[2].split("/")[1]);
 		
 		System.out.println( peticiones.lista.get(3).length);
-		System.out.println( Arrays.toString(idiomaSalida.lista.get(3)));
+		System.out.println( Arrays.toString(idiomaSalida.lista.get(6)));
 		
 		
 		Logger miLog = Logger.getLogger();
@@ -48,6 +48,12 @@ public class main {
 		
 		DiaSemana dias= new DiaSemana( cat,peticiones );
 		System.out.println(dias.getDiasComp().get(4)[2]);
+		
+		System.out.println(cat.getInterDoc().get("007")[1]);
+		
+	Prioridades prio=new Prioridades(conf);
+	for(int i=0; i<prio.getLongitudLista();i++)
+		System.out.println(prio.getPrioridad().get(i));
 	
 		
 	}}

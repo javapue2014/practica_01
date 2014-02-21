@@ -5,13 +5,6 @@ import java.util.LinkedList;
 public class Prioridades {
 
 	private LinkedList<String>prioridad=new LinkedList<>();
-	private int longitudLista=0;
-	
-	
-	
-	public int getLongitudLista() {
-		return longitudLista;
-	}
 
 
 	public LinkedList<String> getPrioridad() {
@@ -30,7 +23,6 @@ public class Prioridades {
 		prioridad.add(prioridadMaxima);
 		
 		//rellenamos el resto de la lista
-		longitudLista=listaDePrioridades.lista.size()+1;
 		for(int i=0;i<listaDePrioridades.lista.size();i++){
 			prioridad.add(listaDePrioridades.lista.get(i)[1]);
 		}

@@ -52,7 +52,7 @@ public class main {
 		System.out.println(cat.getInterDoc().get("007")[1]);
 		
 	Prioridades prio=new Prioridades(conf);
-	for(int i=0; i<prio.getLongitudLista();i++)
+	for(int i=0; i<prio.getPrioridad().size();i++)
 		System.out.println(prio.getPrioridad().get(i));
 	
 		

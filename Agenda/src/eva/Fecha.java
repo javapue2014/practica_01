@@ -47,6 +47,9 @@ public class Fecha {
 	        calendario.set(Calendar.YEAR,año);
 	        calendario.set(Calendar.DAY_OF_MONTH,1);
 	        
+	        calendario.set(Calendar.MONTH, 10);
+	        
+	        
 	    }
 	    
 	    

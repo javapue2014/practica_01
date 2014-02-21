@@ -50,10 +50,15 @@ public class Configuracion {
 			idiomaSort=matrizConf[1];
 			
 		} catch (FileNotFoundException e) {
-		     Incidencias archivoNoEncontrado = new Incidencias("El fichero no ha sido encontrado");	
+			//recupero el objeto incidencia con getIncidencia() y le añado la incidencia
+			Incidencias miIncidencia = Incidencias.getIncidencia();
+			miIncidencia.addIncidencia("El fichero "+ x +  " no ha sido encontrado");	
 			
-		} catch (IOException e) {			 
-			Incidencias problemaConf = new Incidencias("Ha ocurrido un error en la carga de config.txt");	
+		} catch (IOException e) {		
+			//recupero el objeto incidencia con getIncidencia() y le añado la incidencia
+			Incidencias miIncidencia = Incidencias.getIncidencia();
+			miIncidencia.addIncidencia("Ha ocurrido un error en la carga de: "+x);
+			
 		}
 	           
 			

@@ -33,11 +33,16 @@ public class Lectura {
 				
 				
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+				//recupero el objeto incidencia con getIncidencia() y le añado la incidencia
+				Incidencias miIncidencia = Incidencias.getIncidencia();
+				miIncidencia.addIncidencia("El fichero "+ x +  " no ha sido encontrado");
+				
+
+
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				/*Incidencias problemaLectura = new Incidencias("Ha ocurrido un error de lectura con el archivo: "+x);	
+				e.printStackTrace();*/
 			}
 			
 		}

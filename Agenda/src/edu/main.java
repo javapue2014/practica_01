@@ -20,6 +20,9 @@ public class main {
 		Lectura idiomaEntrada= new Lectura("internacional.CAT");	
 		Lectura idiomaSalida= new Lectura("internacional.ENG");
 		
+		
+		
+		
 		//instanciamos Lectura con el archivo de peticones
 		Lectura peticiones = new Lectura("peticions.txt");	
 		
@@ -33,6 +36,18 @@ public class main {
 		
 		Logger miLog = Logger.getLogger();
 		miLog.addLog("Hola");
+		
+		
+		
+		Internacional cat = new Internacional("internacional.CAT");
+		
+		System.out.println(cat.getInterDoc().get("003")[1]);
+		System.out.println( peticiones.lista.get(4)[4]);
+		
+		
+		DiaSemana dias= new DiaSemana( cat,peticiones );
+		System.out.println(dias.getDiasComp().get(4)[2]);
+	
 		
 	}}
 

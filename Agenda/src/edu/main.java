@@ -39,7 +39,8 @@ public class main {
 		
 		
 		
-		Internacional cat = new Internacional("internacional.CAT");
+		Internacional cat = new Internacional("internacional."+conf.getIdiomaEntr());
+		
 		
 		System.out.println(cat.getInterDoc().get("003")[1]);
 		System.out.println( peticiones.lista.get(4)[4]);

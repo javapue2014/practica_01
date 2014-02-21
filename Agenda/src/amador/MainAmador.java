@@ -7,6 +7,9 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import edu.Configuracion;
+import edu.DiaSemana;
+import edu.Internacional;
+import edu.Lectura;
 import ferran.Utiles;
 
 public class MainAmador {
@@ -18,6 +21,13 @@ public class MainAmador {
 		String[][] peticionsOrdenades = Utiles.sortRequest();
 
 		Calendar calendario = Calendar.getInstance(Locale.FRANCE);
+		
+		Internacional cat = new Internacional("internacional."+conf.getIdiomaEntr());
+		Lectura peticiones = new Lectura("peticions.txt");	
+		DiaSemana dias= new DiaSemana( cat,peticiones );
+
+		//System.out.println(dias.getDiasComp().get(4)[2]);
+
 		
 		AssigCal cal = new AssigCal();
 

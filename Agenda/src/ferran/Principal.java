@@ -56,7 +56,7 @@ public class Principal {
 				peticionsSales.add(new Peticions(peticiones.lista.get(i)[0],
 						peticiones.lista.get(i)[1], peticiones.lista.get(i)[2],
 						peticiones.lista.get(i)[3], peticiones.lista.get(i)[4],
-						peticiones.lista.get(i)[5], compt));
+						peticiones.lista.get(i)[5]));
 				compt++;
 			}
 		}
@@ -68,7 +68,7 @@ public class Principal {
 				peticionsSales.add(new Peticions(peticiones.lista.get(j)[0],
 						peticiones.lista.get(j)[1], peticiones.lista.get(j)[2],
 						peticiones.lista.get(j)[3], peticiones.lista.get(j)[4],
-						peticiones.lista.get(j)[5], compt));
+						peticiones.lista.get(j)[5]));
 
 				compt++;
 			}
@@ -82,8 +82,7 @@ public class Principal {
 				peticionsSales.add(new Peticions(peticiones.lista.get(j)[0],
 						peticiones.lista.get(j)[1], peticiones.lista.get(j)[2],
 						peticiones.lista.get(j)[3], peticiones.lista.get(j)[4],
-						peticiones.lista.get(j)[5], compt));
-
+						peticiones.lista.get(j)[5]));
 				compt++;
 			}
 		}

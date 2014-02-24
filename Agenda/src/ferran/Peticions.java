@@ -12,31 +12,22 @@ public class Peticions  {
 	private String dataFi = null;
 	private String mascaraDies = null;
 	private String mascaraHores = null;
-	private int posicio;
+	
 
 	Peticions(String activitat, String espai, String dataInici, String dataFi,
-			String mascaraDies, String mascaraHores, int posicio) {
+			String mascaraDies, String mascaraHores) {
 		this.activitat = activitat;
 		this.espai = espai;
 		this.dataInici = dataInici;
 		this.dataFi = dataFi;
 		this.mascaraDies = mascaraDies;
 		this.mascaraHores = mascaraHores;
-		this.posicio = posicio;
+		
 
 	}
 	
 	
-	public int getPosicio() {
-		return posicio;
-	}
-
-
-	public void setPosicio(int posicio) {
-		this.posicio = posicio;
-	}
-
-
+	
 	@Override
 	public String toString() {
 		return activitat + ", " + espai;

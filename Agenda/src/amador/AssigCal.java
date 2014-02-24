@@ -6,7 +6,7 @@ import edu.Configuracion;
 import edu.DiaSemana;
 import edu.Internacional;
 import edu.Lectura;
-import ferran.Utiles;
+import ferran.Utiles_v0;
 
 public class AssigCal {
 	
@@ -45,7 +45,7 @@ public class AssigCal {
 		//System.out.println(dias.getDiasComp().get(4)[2]);
 
 
-		String[][] peticionsOrdenades = Utiles.sortRequest();
+		String[][] peticionsOrdenades = Utiles_v0.sortRequest();
 
     	String[] dates = new String[3];
 		

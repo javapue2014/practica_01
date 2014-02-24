@@ -10,7 +10,7 @@ import edu.Configuracion;
 import edu.DiaSemana;
 import edu.Internacional;
 import edu.Lectura;
-import ferran.Utiles;
+import ferran.Utiles_v0;
 
 public class MainAmador {
 
@@ -18,7 +18,7 @@ public class MainAmador {
 
 		Configuracion conf = new Configuracion("config.txt");
 		
-		String[][] peticionsOrdenades = Utiles.sortRequest();
+		String[][] peticionsOrdenades = Utiles_v0.sortRequest();
 
 		Calendar calendario = Calendar.getInstance(Locale.FRANCE);
 		

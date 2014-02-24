@@ -10,6 +10,7 @@ import edu.Configuracion;
 import edu.DiaSemana;
 import edu.Internacional;
 import edu.Lectura;
+import ferran.Utiles;
 import ferran.Utiles_v0;
 
 public class MainAmador {
@@ -18,9 +19,9 @@ public class MainAmador {
 
 		Configuracion conf = new Configuracion("config.txt");
 		
-		String[][] peticionsOrdenades = Utiles_v0.sortRequest();
+		String[][] peticionsOrdenades = Utiles.sortRequest();
 
-		Calendar calendario = Calendar.getInstance(Locale.FRANCE);
+		Calendar calendario = Calendar.getInstance();
 		
 		Internacional cat = new Internacional("internacional."+conf.getIdiomaEntr());
 		Lectura peticiones = new Lectura("peticions.txt");	
@@ -33,13 +34,16 @@ public class MainAmador {
 
 		int mes = conf.getMesConf();
 		int any = conf.getAnyConf();
+		
+		System.out.println("any:" + calendario.get(Calendar.YEAR) + " mes: " + calendario.get(Calendar.MONTH)+1 + " dia: " + calendario.get(Calendar.DAY_OF_MONTH) + "dia_set: " + (calendario.get(Calendar.DAY_OF_WEEK)-2));
 
 		calendario = cal.establirMesAny(calendario, mes, any);
+		System.out.println(("any:" + calendario.get(Calendar.YEAR) + " mes: " + calendario.get(Calendar.MONTH)+1 + " dia: " + calendario.get(Calendar.DAY_OF_MONTH) + "dia_set: " + (calendario.get(Calendar.DAY_OF_WEEK)-1)));
 		cal.assignarDiaMes(calendario);
     	
-		for (int i = 0; i < peticionsOrdenades.length; i++) {
-			System.out.println(Arrays.toString(peticionsOrdenades[i]));
-		}
+//		for (int i = 0; i < peticionsOrdenades.length; i++) {
+//			System.out.println(Arrays.toString(peticionsOrdenades[i]));
+//		}
 
 /*		for (int i=0; i<peticionsOrdenades.length; i++){
 			for (int j=0; j<peticionsOrdenades[0].length; j++){

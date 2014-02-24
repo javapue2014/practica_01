@@ -8,7 +8,8 @@ import java.util.Locale;
 
 import edu.Configuracion;
 import edu.Internacional;
-import edu.main;
+
+
 
 public class Mesos {
 
@@ -17,7 +18,7 @@ public class Mesos {
 	// private int mes = conf.getMesConf();
 	// private int any = conf.getAnyConf();
 
-	private static int mes = 8;
+	private static int mes = 6;
 	private static int any = 2014;
 
 	public static int diesMes(int mes, int any) {

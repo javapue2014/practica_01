@@ -10,14 +10,7 @@ import ferran.Utiles;
 
 public class AssigCal {
 	
-	boolean [] dia_mes = new boolean[31];
-	String[][][] cal_pet = new String [2][31][24];
-	
-	private void ini_dia_mes (){
-		for (int i=0; i<dia_mes.length; i++){
-			dia_mes[i] = false;
-		}
-	}
+	String[][][] cal_pet = new String [3][32][24];
 	
 	private void ini_cal_pet (){
 		for (int i=0; i<cal_pet.length; i++){
@@ -56,7 +49,6 @@ public class AssigCal {
 
     	String[] dates = new String[3];
 		
-    	ini_dia_mes();
     	ini_cal_pet();
     
 		for (int i=0; i<peticionsOrdenades.length; i++){
@@ -84,11 +76,9 @@ public class AssigCal {
 	    			cercaDiaSetmana(calendario, j+1, dia_ini, dia_fi, 
 	    					franja, sala, activitat);
 	    		}
-	    		
-	    		
 			}
 
-	    	System.out.println( Arrays.toString(dia_mes));
+	    	System.out.println( Arrays.toString(cal_pet));
 		}
     	
     }
@@ -117,7 +107,7 @@ public class AssigCal {
 	    					hora_ini, hora_fi)){
 	    				
 	    				// Assignem la petició
-	    				for (int m=hora_ini; m<=hora_fi; m++){
+	    				for (int m=hora_ini; m<hora_fi; m++){
 	    					cal_pet[sala][dia_mes][m] = activitat;
 	    				}
 	    			}
@@ -132,7 +122,7 @@ public class AssigCal {
 
 	private boolean disponibleSalaDiaFranja(int sala, int dia,
 			int hora_ini, int hora_fi) {
-		for (int i=hora_ini; i<=hora_fi; i++){
+		for (int i=hora_ini; i<hora_fi; i++){
 			if (cal_pet[sala][dia][i] != "")
 				return false;
 		}

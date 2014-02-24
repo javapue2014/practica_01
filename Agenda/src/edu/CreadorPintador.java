@@ -22,14 +22,14 @@ public class CreadorPintador {
 				+ "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />"
 				+ "</head>"
 				+ "<body>"
-				+"<h1>Hola mi amorrrrrr :)</h1>"
+				+"<h1>Esto funciona!!!</h1>"
 				+"</body></html>");
 		cont.close();
 		
 	}
 	
 	public static void main(String[] args) throws IOException {
-		CreadorPintador hola =new CreadorPintador("amor");
+		CreadorPintador hola =new CreadorPintador("numSala");
 		System.out.println("documento generado");
 	}
 

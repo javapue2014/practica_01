@@ -14,11 +14,11 @@ public class Mesos {
 
 	static Configuracion conf = new Configuracion("config.txt");
 
-	// private int mes = conf.getMesConf();
-	// private int any = conf.getAnyConf();
+	private static int mes = conf.getMesConf();
+	private static int any = conf.getAnyConf();
 
-	private static int mes = 3;
-	private static int any = 2014;
+	//private static int mes = 12;
+	//private static int any = 2014;
 
 	public static int diesMes(int mes, int any) {
 		int qDies = 0;
@@ -129,6 +129,11 @@ public class Mesos {
 			setmanesMes = weekOfYear2 - weekOfYear1 + 2;
 		}
 
+		System.out.println("semana del primer dia : "+weekOfYear1);
+		System.out.println("semana del ultimo dia : "+weekOfYear2);
+		
+		// setmanesMes es la cantidad de semanas
+		
 		
 		System.out.println(cat.getInterDoc().get("004")[1].split(",")[mes-1]+ "\n");
 		

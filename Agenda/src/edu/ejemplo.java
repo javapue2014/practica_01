@@ -40,5 +40,7 @@ public class ejemplo {
 				
 	}
 		System.out.println(Arrays.toString(copy));
+		
+		System.out.println((String)ej[1]==ej[3]);
 
 }}

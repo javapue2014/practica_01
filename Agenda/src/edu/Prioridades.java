@@ -19,7 +19,7 @@ public class Prioridades {
 		
 		//prioridad 1 en la primera posicion de lista prioridad	
 		String prioridadMaxima=cat.getInterDoc().get("007")[1];
-		System.out.println(prioridadMaxima);
+		//System.out.println(prioridadMaxima);
 		prioridad.add(prioridadMaxima);
 		
 		//rellenamos el resto de la lista

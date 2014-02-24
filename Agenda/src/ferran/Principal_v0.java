@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 import edu.*;
 
-public class Principal {
+public class Principal_v0 {
 
 	static Lectura idioma = new Lectura("internacional.CAT");
 	static String tancatIdioma = (idioma.lista.get(6)[1]).toUpperCase();

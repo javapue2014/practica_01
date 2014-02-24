@@ -11,7 +11,7 @@ import edu.Configuracion;
 import edu.Lectura;
 import edu.Prioridades;
 
-public class ImportaPrioritats {
+public class UtilesMain {
 
 	private static boolean hiHaPrioritats = false;
 	static String[] paraulesClau;

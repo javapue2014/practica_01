@@ -5,79 +5,59 @@ body{
 	width: 100%;
 	background-color:#ccc;
 	font-family: arial, sans-serif;
-	font-size: 0.68em;
 }
 
 h1 {
-	font-size: 3.25em;
-	letter-spacing: -0,2%;
-	line-height: 1.25em;	
-}
-
-h2{
 	font-size: 2.25em;
 	letter-spacing: -0,2%;
 	line-height: 1.25em;	
-	margin:1%;
-	padding:0%;	
-}
-h3{
-	font-size: 1.25em;
-	letter-spacing: -0,1%;
-	line-height: 1.25em;	
-	margin:1%;
+	margin:0%;
 	padding:0%;
 }
 
-#contenedor{
-	display: table;
-
-    heigth:100%;
-    width:auto;
-    max-width: 1000px;
-    background-color: #fff;
-    text-align: center;
-    margin: 0px auto;
+h2{
+	font-size: 1.25em;
+	letter-spacing: -0,2%;
+	line-height: 1.25em;	
+	margin:3% 0%;
+	padding:0%;	
 }
+h3{
+	font-size: 0.75em;
+	letter-spacing: -0,1%;
+	line-height: 1.25em;	
+	margin:0%;
+	padding:0%;
+}
+
+
 
 .semanaCont {
     display: table;
-
+   
+  	border-spacing: 5px;
     border: 2px solid #000;
     heigth:100%;
     width:auto;
-
+    max-width: 1000px;
     background-color: #333;
     text-align: center;
-    margin: 0 0 50px 0px;
+    margin: 50px 0px;
 }
 .fila{
     display: table-row;
     width: 100%;
     height: auto;
     background-color: #fff  
-    
 }
-.enuCol{
-	display: table-cell;
-    width: 16%;
-    height:auto;
-    border: 1px solid #000;
-    vertical-align: middle;
-}
-.cel{
+.cel,.dia,.enuCol{
     display: table-cell;
-    width: 12%;
-    height:auto;
     border: 1px solid #000;
     vertical-align: middle;
-    padding: 12px;
+    padding: 0.5% 1%;
 }
 .diaNo{
 	display: table-cell;
-	width: 12%;
-	height:auto;
-	border: 1px solid #000;
 	background-color: #999;color:#999;
 	
 }

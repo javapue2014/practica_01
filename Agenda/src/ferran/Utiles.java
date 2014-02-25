@@ -160,11 +160,11 @@ public class Utiles {
 		});
 
 		// imprimeix després d'ordenar
-		System.out.println("------------------------------------");
-
-		for (int i = 0; i < peticionsSales.size(); i++) {
-			System.out.println(Arrays.toString(arrayPeticions[i]));
-		}
+//		System.out.println("------------------------------------");
+//
+//		for (int i = 0; i < peticionsSales.size(); i++) {
+//			System.out.println(Arrays.toString(arrayPeticions[i]));
+//		}
 		
 		return arrayPeticions;
 

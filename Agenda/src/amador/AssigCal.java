@@ -35,17 +35,29 @@ public class AssigCal {
 		return calendario;
 	}
 	
+	
+	
 	private int assignarDiaInici(int any_conf, int mes_conf, int any_pet, int mes_pet, int dia_pet){
+		
+		mes_pet = 12;
+		dia_pet = 10;
 		
 		GregorianCalendar cal_conf = new GregorianCalendar(any_conf, mes_conf, 1);
 		GregorianCalendar cal_peti = new GregorianCalendar(any_pet, mes_pet, dia_pet);
 		
 		if (cal_conf.compareTo(cal_peti)>0){
 			// Data del conf és superior a la data de la petició
-			return cal_conf.get(GregorianCalendar.DAY_OF_MONTH);
+			return 1;
 		} else {
 			// Data del conf és inferior a la data de la petició
-			return cal_peti.get(GregorianCalendar.DAY_OF_MONTH);
+			if (mes_conf == mes_pet){
+				// Si es el mateix mes, assigna el dia de la peticio
+				return cal_peti.get(GregorianCalendar.DAY_OF_MONTH);
+			} else {
+				return cal_conf.getMaximum(GregorianCalendar.DAY_OF_MONTH);
+			}
+			
+//			return cal_peti.get(GregorianCalendar.DAY_OF_MONTH);
 		}
 		
 //		int a = cal_conf.getFirstDayOfWeek();

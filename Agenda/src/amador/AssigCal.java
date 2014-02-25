@@ -34,7 +34,39 @@ public class AssigCal {
 		calendario.set(Calendar.DAY_OF_MONTH, dia);
 		return calendario;
 	}
+	
+	private int assignarDiaInici(int any_conf, int mes_conf, int any_pet, int mes_pet, int dia_pet){
+		
+		GregorianCalendar cal_conf = new GregorianCalendar(any_conf, mes_conf, 1);
+		GregorianCalendar cal_peti = new GregorianCalendar(any_pet, mes_pet, dia_pet);
+		
+		if (cal_conf.compareTo(cal_peti)>0){
+			// Data del conf és superior a la data de la petició
+			return cal_conf.get(GregorianCalendar.DAY_OF_MONTH);
+		} else {
+			// Data del conf és inferior a la data de la petició
+			return cal_peti.get(GregorianCalendar.DAY_OF_MONTH);
+		}
+		
+//		int a = cal_conf.getFirstDayOfWeek();
+//		cal_conf.setFirstDayOfWeek(GregorianCalendar.MONDAY);
+	}
 
+	private int assignarDiaFinal(int any_conf, int mes_conf, int any_pet, int mes_pet, int dia_pet){
+		
+		GregorianCalendar cal_conf = new GregorianCalendar(any_conf, mes_conf, 1);
+		GregorianCalendar cal_peti = new GregorianCalendar(any_pet, mes_pet, dia_pet);
+		
+		if (cal_conf.compareTo(cal_peti)<0){
+			// Data del conf és inferior a la data de la petició
+			return cal_conf.get(GregorianCalendar.DAY_OF_MONTH);
+		} else {
+			// Data del conf és inferior a la data de la petició
+			return cal_peti.get(GregorianCalendar.DAY_OF_MONTH);
+		}
+	}
+
+	
 	public void assignarDiaMes(Calendar calendario) {
 		// Entrada ent = new Entrada();
 
@@ -54,9 +86,9 @@ public class AssigCal {
 			// Obtenim el dia inici i final del rang de dates
 			// per línea de peticio
 			dates = peticionsOrdenades[i][2].split("/");
-			int dia_ini = Integer.parseInt(dates[0]);
+			int dia_ini = assignarDiaInici((int)conf.getAnyConf(), (int)conf.getMesConf(), Integer.parseInt(dates[2]), Integer.parseInt(dates[1]), Integer.parseInt(dates[0]));
 			dates = peticionsOrdenades[i][3].split("/");
-			int dia_fi = Integer.parseInt(dates[0]);
+			int dia_fi =  assignarDiaInici((int)conf.getAnyConf(), (int)conf.getMesConf(), Integer.parseInt(dates[2]), Integer.parseInt(dates[1]), Integer.parseInt(dates[0]));
 
 			// Obtenir numero de sala
 			int sala = Integer.parseInt(peticionsOrdenades[i][1].substring(4));
@@ -81,7 +113,8 @@ public class AssigCal {
 						+ calendario.get(Calendar.DAY_OF_WEEK) + " Dia set1: "
 						+ dia_set);
 
-				// Verifiquem si el dia de la setmana es troba actiu dins la taula de mascara setmana
+				// Verifiquem si el dia de la setmana es troba actiu dins la
+				// taula de mascara setmana
 				if (dias.getDiasComp().get(i)[dia_set - 1] == true) {
 
 					int dia_mes = calendario.get(Calendar.DAY_OF_MONTH);
@@ -110,7 +143,6 @@ public class AssigCal {
 
 			}
 
-
 			// cercaDiaSetmana(calendario, dias, dia_ini, dia_fi,
 			// franja, sala, activitat);
 
@@ -123,7 +155,7 @@ public class AssigCal {
 
 		}
 		for (int y = 0; y < cal_pet.length; y++) {
-			System.out.println("SALA"+ y);
+			System.out.println("SALA" + y);
 			for (int z = 0; z < cal_pet[0].length; z++) {
 				System.out.println("Dia: " + z);
 				System.out.println(Arrays.toString(cal_pet[y][z]));

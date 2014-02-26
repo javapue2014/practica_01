@@ -1,5 +1,7 @@
 package edu;
 import ferran.*;
+import amador.*;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -9,73 +11,88 @@ import java.util.Calendar;
 
 public class Pintado {
 	
-	public Pintado (String[][][] objCalendario, Mesos obj) throws IOException{
+	public Pintado (AssigCal obj1, Calendario obj2, Configuracion conf) throws IOException{
 		
 		//bucle generador de tantos ficheros html como num de salas
-		for(int l=0;l<objCalendario.length;l++){
+		for(int k=0;k<obj1.getCal_pet().length;k++){
 			
 			//creamos un archivo html
-			File sala= new File("Sala"+objCalendario[l]+".html");
-			Writer cont = new BufferedWriter(new FileWriter("Sala"+objCalendario[l]+".html"));
+			File sala= new File("Sala"+(k+1)+".html");
+			Writer cont = new BufferedWriter(new FileWriter("Sala"+ (k+1) +".html"));
 			//escribimos la cabecera del documento
-			cont.write("<html>"
+			
+			int dia=0;
+			
+			cont.write("<!DOCTYPE html>"
+					+ "<html>"
 					+ "<head>"
-					+ "<title>title</title>"
-					+ "<link rel='stylesheet' type='text/css' href='styles.css'>"
-					+ "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />"
+					+ "<meta charset='ISO-8859-1'>"
+					+ "<title>Agenda - Sala x </title>"
+					+ "<link rel='stylesheet' href='style.css' /> "
 					+ "</head>"
-					+ "<body>");
-			
-				//escribe tantas filas como cantidad de semanas tiene el mes
-				for(int i=0;i<obj.getnumSemanas();i++){
-				cont.write("<div class='contenedor'>"
-						+ "<header>"
-						+ "<h1 id='enun'> NumDe Sala </h1>"
-						+ "<h2> Texto mes y año conf </h2>"
-						+ "</header>"
-						+ "<!-- Contenedor de la semana -->"
-						+ "<div class='semanaCont'>"
-						+ "<!-- primera fila con mascara de dias aportado por internaciona.ENG -->"
-						+ "<div class='filaMascara'>"
-						+ "<div class='setm'><h3> Setm: +numSamana </h3> </div>"
-						+ "<div class='lunes'><h3> Masc.split.[0] </h3></div>"
-						+ "<div class='martes'><h3> Masc.split.[1] </h3></div>"
-						+ "<div class='miercoles'><h3> Masc.split.[2] </h3></div>"
-						+ "<div class='jueves'><h3> Masc.split.[3] </h3></div>"
-						+ "<div class='viernes'><h3> Masc.split.[4] </h3></div>"
-						+ "<div class='sabado'><h3> Masc.split.[5] </h3></div>"
-						+ "<div class='domingo'><h3> Masc.split.[6] </h3></div>"
-						+ "</div>"
-						+ "<!-- segunda fila con num de dias por semana -->"
-						+ "<div class='diaSemanaNum'>");
-				
-				//escribe 8 columnas, 1 de info y 7 de los dias por semana.
-				for (int j=0;j<7;j++){
-					do {//pinta la primera col
-						
-					}while(z!=1);
+					+ "<body>"
+					+ "<section>"
+					+ "<!-- contenedor general -->"
+					+ "<div id='contenedor'>"
+					+ "<header>"
+					+ "<h1 id='enun'> Sala "+ (k+1) + " </h1>"
+					+ "<h2> "+ conf.getIdiomaSalida().getInterDoc().get("004")[1].split(",")[(conf.getMesConf()-1)]  + conf.getAnyConf()+"</h2>"
+					+ "</header>"
+					);
+
+					for(int l=0; l<obj2.getSemanasDelMes() ;l++){
+						cont.write(
+					//<!-- Contenedor de la semana -->
+					  "<div class='semanaCont'>"
+					//"<!-- primera fila con mascara de dias aportado por idioma de salida -->"
+					+ "<div class='fila'>"
 					
-				}
-			
-			
+					+ "<div class='enuCol'><h3> Setm:" + (obj2.getSemana1()+l) +"</h3> </div>");
+						//primera fila- mascara de semana	
+						for(int m=0; m<7;m++){
+							cont.write("<div class='cel'><h3>"+ conf.getIdiomaSalida().getInterDoc().get("003")[1].charAt(m) + "</h3></div>");
+						}
+					cont.write("</div>"
+							
+					+"<div class='fila'>");
+						//segunda fila- dias de la semana	
+					cont.write("<div class='enuCol'><h3>Dia: </h3></div>");
+						for(int j=0; j<7;j++){
+							if(!obj2.trueOFalse().get(l)[j]){
+							cont.write("<div class='diaNo'><h3>  </h3></div>");
+							}else{
+							dia++;
+							cont.write("<div class='cel'><h3>"+ dia +"</h3></div>");
+								} 	
+							}
 					
-				
-				cont.write("</div>");
-				}
-			
+					cont.write("</div></div>");//cierre de semanaCont
+							
+
+					}
 					
-					
-			cont.write("</body></html>");
+			cont.write( "</div>"
+					+ "</section>"
+					+ "</body>"
+					+ "</html>");
 			cont.close();
 			
-			
-			/*int numSemanas=calendario.ge
-			for (int i;i< calendario.MONTH.WEEK_OF_MONTH)*/
-			
-			
-			//escribimos las etiquetas de cierre del html
 		}
-		
-	}
-
 }
+	
+	public static void main(String[] args) {
+		Configuracion conf= new Configuracion("config.txt");
+		
+		System.out.println(conf.getIdiomaEntrada().getInterDoc().get("004")[1]);
+		
+		AssigCal obj1= new AssigCal ();
+		Calendario obj2= new Calendario();
+		try {
+			Pintado j= new Pintado (obj1, obj2, conf);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+

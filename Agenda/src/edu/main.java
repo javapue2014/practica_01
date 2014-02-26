@@ -30,7 +30,7 @@ public class main {
 		System.out.println( peticiones.lista.get(3)[2].split("/")[1]);
 		
 		System.out.println( peticiones.lista.get(3).length);
-		System.out.println( Arrays.toString(idiomaSalida.lista.get(6)));
+		System.out.println( Arrays.toString(idiomaSalida.lista.get(3)));
 		
 		
 		Logger miLog = Logger.getLogger();
@@ -39,6 +39,10 @@ public class main {
 		
 		
 		Internacional cat = new Internacional("internacional."+conf.getIdiomaEntr());
+		Internacional eng = new Internacional("internacional."+ conf.getIdiomaSort());
+		System.out.println("hola");
+		System.out.println(eng.getInterDoc().get("004")[1]);
+		
 		
 		
 		System.out.println(cat.getInterDoc().get("003")[1]);
@@ -49,9 +53,12 @@ public class main {
 		System.out.println(dias.getDiasComp().get(4)[2]);		
 		System.out.println(cat.getInterDoc().get("007")[1]);
 		
+		
+		
 	Prioridades prio=new Prioridades(conf);
 	for(int i=0; i<prio.getPrioridad().size();i++)
 		System.out.println(prio.getPrioridad().get(i));
 
 	
+	System.out.println(conf.getIdiomaEntrada().getInterDoc());
 }}

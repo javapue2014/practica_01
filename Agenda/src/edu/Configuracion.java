@@ -4,9 +4,23 @@ import java.io.*;
 public class Configuracion {
 	private int anyConf, mesConf;
 	private String idiomaEntr, idiomaSort;
+	
+	private Internacional idiomaEntrada;	
+	private Internacional idiomaSalida;
 
+	
+	public Internacional getIdiomaEntrada() {
+		return idiomaEntrada;
+	}
+	public Internacional getIdiomaSalida() {
+		return idiomaSalida;
+	}
+
+	
+	
+	
 	//getters
-	public int getAnyConf() {
+ 	public int getAnyConf() {
 		return anyConf;
 	}
 	public int getMesConf() {
@@ -48,6 +62,9 @@ public class Configuracion {
 			matrizConf=lecturaConf.readLine().split(" ");
 			idiomaEntr=matrizConf[0];
 			idiomaSort=matrizConf[1];
+						
+			idiomaEntrada= new Internacional("internacional."+getIdiomaEntr());
+			idiomaSalida= new Internacional("internacional."+getIdiomaSort());
 			
 		} catch (FileNotFoundException e) {
 			//recupero el objeto incidencia con getIncidencia() y le añado la incidencia

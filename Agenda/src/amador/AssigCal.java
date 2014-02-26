@@ -11,7 +11,7 @@ import ferran.Utiles_v0;
 
 public class AssigCal {
 
-	String[][][] cal_pet = new String[5][32][24];
+	private String[][][] cal_pet = new String[5][32][24];
 
 	private void ini_cal_pet() {
 		for (int i = 0; i < cal_pet.length; i++) {
@@ -21,6 +21,10 @@ public class AssigCal {
 				}
 			}
 		}
+	}
+
+	public String[][][] getCal_pet() {
+		return cal_pet;
 	}
 
 	public Calendar establirMesAny(Calendar calendario, int mes, int any) {

@@ -18,8 +18,14 @@ public class Calendario {
 	// sortida
 	private static int semana1 = 1;
 	private static int semanasDelMes;
+	private static int ultimDiaMes;
 	
 	
+	
+	
+	public static int getUltimDiaMes() {
+		return ultimDiaMes;
+	}
 
 	public static int getSemana1() {
 		return semana1;
@@ -168,6 +174,9 @@ public class Calendario {
 			semanasDelMes = semanasDelMes + 1;
 		}
 
+		
+		ultimDiaMes = dataAny2.get((Calendar.DAY_OF_MONTH));
+		
 		
 
 		for (int j = 0; j < semanasDelMes; j++) {

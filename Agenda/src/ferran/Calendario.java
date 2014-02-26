@@ -13,26 +13,26 @@ import edu.main;
 
 public class Calendario {
 
-	static Configuracion conf = new Configuracion("config.txt");
+	Configuracion conf = new Configuracion("config.txt");
 
 	// sortida
-	private static int semana1 = 1;
-	private static int semanasDelMes;
-	private static int ultimDiaMes;
+	private int semana1 = 1;
+	private int semanasDelMes;
+	private int ultimDiaMes;
 	
 	
 	
 	
-	public static int getUltimDiaMes() {
+	public int getUltimDiaMes() {
 		return ultimDiaMes;
 	}
 
-	public static int getSemana1() {
+	public int getSemana1() {
 		return semana1;
 	}
 
-	public static void setSemana1(int semana1) {
-		Calendario.semana1 = semana1;
+	public void setSemana1(int semana1) {
+		this.semana1 = semana1;
 	}
 
 		
@@ -40,22 +40,22 @@ public class Calendario {
 	static ArrayList<boolean[]> diesMes = new ArrayList<boolean[]>();
 	static boolean[] pertanyAlMes = new boolean[7];
 
-	private static int mes = conf.getMesConf();
-	private static int any = conf.getAnyConf();
+	private int mes = conf.getMesConf();
+	private int any = conf.getAnyConf();
 	
-	public static int getSemanasDelMes() {
+	public int getSemanasDelMes() {
 		return semanasDelMes;
 	}
 
 
 
-	private static int primerDiaMes = 1;
-	private static int primerDiaSetmana;
+	private int primerDiaMes = 1;
+	private int primerDiaSetmana;
 
 	//private static int mes = 2;
 	//private static int any = 2014;
 
-	private static int diesMes(int mes, int any) {
+	private int diesMes(int mes, int any) {
 		int qDies = 0;
 		// this.mes = mes;
 		// this.any = any;

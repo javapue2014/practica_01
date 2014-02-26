@@ -16,7 +16,7 @@ public class Calendario_ayuda {
 
 	public static void main(String[] args) {
 
-		ArrayList<boolean[]> calen = Calendario.trueOFalse();
+		//ArrayList<boolean[]> calen = Calendario.trueOFalse();
 
 //		for (int i = 0; i < calen.size(); i++) {
 //			System.out.println(Arrays.toString(calen.get(0)));
@@ -28,7 +28,7 @@ public class Calendario_ayuda {
 		// semanas que tiene el mes
 		//System.out.println(calen.size());
 		
-		numSemanas = calen.size();
+		//numSemanas = calen.size();
 		
 
 	}

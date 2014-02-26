@@ -107,7 +107,7 @@ public class Calendario {
 		return qDies;
 	}
 
-	public static ArrayList<boolean[]> trueOFalse() {
+	public ArrayList<boolean[]> trueOFalse() {
 
 		Internacional cat = new Internacional("internacional."
 				+ conf.getIdiomaEntr());

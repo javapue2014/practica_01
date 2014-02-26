@@ -19,6 +19,7 @@ public class Calendario {
 	private int semana1 = 1;
 	private int semanasDelMes;
 	private int ultimDiaMes;
+	public int nSemanas;
 	
 	
 	
@@ -171,7 +172,8 @@ public class Calendario {
 			semanasDelMes = semanasDelMes + 1;
 		}
 
-		int nSemanas = semanasDelMes;
+		nSemanas = semanasDelMes;
+		
 		
 		ultimDiaMes = dataAny2.get((Calendar.DAY_OF_MONTH));
 		

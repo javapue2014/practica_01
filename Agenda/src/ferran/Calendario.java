@@ -37,6 +37,12 @@ public class Calendario {
 	private static int mes = conf.getMesConf();
 	private static int any = conf.getAnyConf();
 	
+	public static int getSemanasDelMes() {
+		return semanasDelMes;
+	}
+
+
+
 	private static int primerDiaMes = 1;
 	private static int primerDiaSetmana;
 

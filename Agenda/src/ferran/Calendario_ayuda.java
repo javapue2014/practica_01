@@ -6,9 +6,13 @@ import java.util.Arrays;
 public class Calendario_ayuda {
 	private static int numSemanas;
 
-	public static int getnumSemanas() {
+	
+
+	public static int getNumSemanas() {
 		return numSemanas;
 	}
+
+
 
 	public static void main(String[] args) {
 

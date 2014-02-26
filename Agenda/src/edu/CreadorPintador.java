@@ -23,51 +23,64 @@ public class CreadorPintador {
 		
 		int dia=0;
 		
-		cont.write("<html>"
+		cont.write("<!DOCTYPE html>"
+				+ "<html>"
 				+ "<head>"
-				+ "<title>title</title>"
-				+ "<link rel='stylesheet' type='text/css' href='estilo.css'>"
-				+ "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />"
+				+ "<meta charset='ISO-8859-1'>"
+				+ "<title>Agenda - Sala x </title>"
+				+ "<link rel='stylesheet' href='style.css' /> "
 				+ "</head>"
-				+ "<body><div id='contenedor'>");
+				+ "<body>"
+				+ "<section>"
+				+ "<!-- contenedor general -->"
+				+ "<div id='contenedor'>"
+				+ "<header>"
+				+ "<h1 id='enun'> Sala 1 </h1>"
+				+ "<h2> Noviembre 2008 </h2>"
+				+ "</header>"
+				);
 
 				for(int l=0; l<4;l++){
-					cont.write("<div class='semanaCont'>");
+					cont.write(
+				//<!-- Contenedor de la semana -->
+				  "<div class='semanaCont'>"
+				//"<!-- primera fila con mascara de dias aportado por idioma de salida -->"
+				+ "<div class='fila'>"
+				
+				+ "<div class='enuCol'><h3> Setm:" + (primeraSeman+l) +"</h3> </div>");
 					//primera fila- mascara de semana	
-					cont.write("<div class='setm'><h3> Setm:" + (primeraSeman+l) +"</h3> </div>");
 					for(int m=0; m<7;m++){
-						cont.write("<div class='setm'><h3>"+ mascara.charAt(m) + "</h3></div>");
+						cont.write("<div class='cel'><h3>"+ mascara.charAt(m) + "</h3></div>");
 					}
-					cont.write("</div>");
-					cont.write("<div class='diaSemanaNum'>");
-					//segunda fila- mascara de semana	
-					cont.write("<div class='dia'><h3> Dia: </h3></div>");
+				cont.write("</div>"
+						
+				+"<div class='fila'>");
+					//segunda fila- dias de la semana	
+				cont.write("<div class='enuCol'><h3>Dia: </h3></div>");
 					for(int j=0; j<7;j++){
 						if(!verdaderOfalso[j]){
-						cont.write("<div class='diaNo'><h3> null</h3></div>");
+						cont.write("<div class='diaNo'><h3>  </h3></div>");
 						}else{
 						dia++;
-						cont.write("<div class='diaSi'><h3>"+ dia +"</h3></div>");
+						cont.write("<div class='cel'><h3>"+ dia +"</h3></div>");
 							} 	
 						}
-					cont.write("</div>");
+				
+				cont.write("</div></div>");//cierre de semanaCont
+						
 
-					}
-							
-					
-					
+				}
 				
-				
-				
-				
-				
-		cont.write("</div></body></html>");
+		cont.write( "</div>"
+				+ "</section>"
+				+ "</body>"
+				+ "</html>");
 		cont.close();
 		
 	}
 	
 	public static void main(String[] args) throws IOException {
-		CreadorPintador hola =new CreadorPintador("numSala");
+		CreadorPintador hola =new CreadorPintador("petronilo");
 		
 	}
 

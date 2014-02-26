@@ -4,6 +4,7 @@ package amador;
 
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 import edu.Configuracion;
@@ -22,6 +23,20 @@ public class MainAmador {
 		String[][] peticionsOrdenades = Utiles.sortRequest();
 
 		Calendar calendario = Calendar.getInstance();
+		
+//		//----
+//		GregorianCalendar cale = new GregorianCalendar(2014, 2, 1);
+//		System.out.println(cale.get(Calendar.DAY_OF_MONTH) + "/" + cale.get(Calendar.MONTH) + "/" + cale.get(Calendar.YEAR));
+//		System.out.println("dia: " + cale.get(Calendar.DAY_OF_MONTH) + " dia_set: " + cale.get(Calendar.DAY_OF_WEEK) + "num_set: " + cale.getMaximum(Calendar.WEEK_OF_MONTH));
+//		
+//		for (int i=1; i<32; i++){
+//			cale.set(Calendar.DAY_OF_MONTH, i);
+//			System.out.println(cale.get(Calendar.DAY_OF_MONTH) + "/" + cale.get(Calendar.MONTH) + "/" + cale.get(Calendar.YEAR));
+//			System.out.println("dia: " + cale.get(Calendar.DAY_OF_MONTH) + " dia_set: " + cale.get(Calendar.DAY_OF_WEEK) + " num_set: " + cale.getMaximum(Calendar.WEEK_OF_MONTH));
+//		}
+//
+//		System.out.println("dia: " + cale.get(Calendar.DAY_OF_MONTH) + " dia_set: " + cale.get(Calendar.DAY_OF_WEEK) + "num_set: " + cale.getActualMaximum(Calendar.WEEK_OF_MONTH));
+		
 
 		Internacional cat = new Internacional("internacional."
 				+ conf.getIdiomaEntr());

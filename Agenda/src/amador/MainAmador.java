@@ -55,7 +55,7 @@ public class MainAmador {
 				+ calendario.get(Calendar.DAY_OF_MONTH) + "dia_set: "
 				+ (calendario.get(Calendar.DAY_OF_WEEK) - 2));
 
-		calendario = cal.establirMesAny(calendario, mes, any);
+		calendario = cal.establirDiaMesAny(calendario, 1, mes, any);
 		System.out
 				.println(("any:" + calendario.get(Calendar.YEAR) + " mes: "
 						+ calendario.get(Calendar.MONTH) + 1 + " dia: "
@@ -75,7 +75,7 @@ public class MainAmador {
 		 */
 		System.out.println("Any: " + calendario.get(Calendar.YEAR) + "; Mes:  "
 				+ (calendario.get(Calendar.MONTH) + 1));
-		cal.establirMesAny(calendario, mes, any);
+		cal.establirDiaMesAny(calendario, 1, mes, any);
 		System.out.println("Any: " + calendario.get(Calendar.YEAR) + "; Mes:  "
 				+ (calendario.get(Calendar.MONTH) + 1));
 

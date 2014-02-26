@@ -43,9 +43,6 @@ public class Calendario {
 	private int mes = conf.getMesConf();
 	private int any = conf.getAnyConf();
 	
-	public int getSemanasDelMes() {
-		return semanasDelMes;
-	}
 
 
 
@@ -174,6 +171,7 @@ public class Calendario {
 			semanasDelMes = semanasDelMes + 1;
 		}
 
+		int nSemanas = semanasDelMes;
 		
 		ultimDiaMes = dataAny2.get((Calendar.DAY_OF_MONTH));
 		
@@ -211,5 +209,10 @@ public class Calendario {
 	return diesMes;
 
 	}
+	
+	public int getSemanasDelMes() {
+		return semanasDelMes;
+	}
+
 
 }

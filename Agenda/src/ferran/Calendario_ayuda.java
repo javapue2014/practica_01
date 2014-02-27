@@ -10,7 +10,7 @@ public class Calendario_ayuda {
 	public static void main(String[] args)
 			throws CalendarioMesNoValidoException {
 
-		int mes = 2;
+		int mes = 15;
 		int any = 2014;
 
 		// La classe Calendario genera un ArrayList amb les

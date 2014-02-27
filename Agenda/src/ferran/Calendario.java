@@ -14,16 +14,15 @@ import edu.main;
 public class Calendario {
 
 	Configuracion conf = new Configuracion("config.txt");
+	private int mes = conf.getMesConf();
+	private int any = conf.getAnyConf();
 
 	// sortida
 	private int semana1 = 1;
 	private int semanasDelMes;
 	private int ultimDiaMes;
 	public int nSemanas;
-	
-	
-	
-	
+
 	public int getUltimDiaMes() {
 		return ultimDiaMes;
 	}
@@ -36,22 +35,15 @@ public class Calendario {
 		this.semana1 = semana1;
 	}
 
-		
+	ArrayList<boolean[]> diesMes = new ArrayList<boolean[]>();
+	boolean[] pertanyAlMes = new boolean[7];
 
-	static ArrayList<boolean[]> diesMes = new ArrayList<boolean[]>();
-	static boolean[] pertanyAlMes = new boolean[7];
-
-	private int mes = conf.getMesConf();
-	private int any = conf.getAnyConf();
 	
-
-
-
 	private int primerDiaMes = 1;
 	private int primerDiaSetmana;
 
-	//private static int mes = 2;
-	//private static int any = 2014;
+	// private static int mes = 2;
+	// private static int any = 2014;
 
 	private int diesMes(int mes, int any) {
 		int qDies = 0;
@@ -105,8 +97,11 @@ public class Calendario {
 		return qDies;
 	}
 
-	public ArrayList<boolean[]> trueOFalse() {
-
+	public ArrayList<boolean[]> trueOFalse(int mes, int any) {
+		this.mes = mes;
+		this.any = any;
+		
+		
 		Internacional cat = new Internacional("internacional."
 				+ conf.getIdiomaEntr());
 
@@ -114,7 +109,7 @@ public class Calendario {
 		Calendar dataAny = new GregorianCalendar(any, (mes - 1), 1, 00, 00, 00);
 		Calendar dataAny2 = new GregorianCalendar(any, (mes - 1), 1, 00, 00, 00);
 
-		//int month = dataAny.get(Calendar.MONTH) + 1;
+		// int month = dataAny.get(Calendar.MONTH) + 1;
 
 		// System.out.println("Primer dia del mes:  " + dataAny.getTime());
 		Date date = new Date();
@@ -165,7 +160,6 @@ public class Calendario {
 			semanasDelMes = weekOfYear2 - semana1 + 2;
 		}
 
-		
 		if (primerDiaSetmana == 2) {
 			dataAny.add(Calendar.DATE, -7);
 			primerDiaSetmana = dataAny.get((Calendar.DAY_OF_MONTH));
@@ -173,11 +167,8 @@ public class Calendario {
 		}
 
 		nSemanas = semanasDelMes;
-		
-		
+
 		ultimDiaMes = dataAny2.get((Calendar.DAY_OF_MONTH));
-		
-		
 
 		for (int j = 0; j < semanasDelMes; j++) {
 			// System.out.println("bucle j");
@@ -193,28 +184,27 @@ public class Calendario {
 				}
 
 				// imprimir-ho en pantalla
-				//System.out.print(primerDiaSetmana + "\t");
+				// System.out.print(primerDiaSetmana + "\t");
 
 				dataAny.add(Calendar.DATE, +1);
 				primerDiaSetmana = dataAny.get((Calendar.DAY_OF_MONTH));
 
 			}
 			diesMes.add(pertanyAlMes);
-			//System.out.println("\n");
+			// System.out.println("\n");
 		}
 
 		// imprimir l'ArraList
-//		for (int i = 0; i < diesMes.size(); i++) {
-//			System.out.println(Arrays.toString(diesMes.get(i)));
-//		}
-		
-	return diesMes;
+		// for (int i = 0; i < diesMes.size(); i++) {
+		// System.out.println(Arrays.toString(diesMes.get(i)));
+		// }
+
+		return diesMes;
 
 	}
-	
+
 	public int getSemanasDelMes() {
 		return semanasDelMes;
 	}
-
 
 }

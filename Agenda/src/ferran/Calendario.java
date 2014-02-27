@@ -14,8 +14,12 @@ import edu.main;
 public class Calendario {
 
 	Configuracion conf = new Configuracion("config.txt");
-	private int mes = conf.getMesConf();
-	private int any = conf.getAnyConf();
+	private int mes;
+	private int any;
+	
+	// opcions de prova del config
+	//private int mes = conf.getMesConf();
+	//private int any = conf.getAnyConf();
 
 	// sortida
 	private int semana1 = 1;
@@ -35,10 +39,7 @@ public class Calendario {
 		this.semana1 = semana1;
 	}
 
-	
-	boolean[] pertanyAlMes = new boolean[7];
-
-	
+		
 	private int primerDiaMes = 1;
 	private int primerDiaSetmana;
 
@@ -97,24 +98,33 @@ public class Calendario {
 		return qDies;
 	}
 
-	public ArrayList<boolean[]> trueOFalse(int mes, int any) {
+	public ArrayList<boolean[]> trueOFalse(int mes, int any) throws CalendarioMesNoValidoException {
+		
+				
 		ArrayList<boolean[]> diesMes = new ArrayList<boolean[]>();
+		
+		diesMes.clear();
+		
+		boolean[] pertanyAlMes = new boolean[7];
 		
 		this.mes = mes;
 		this.any = any;
 		
+		if (mes < 1 || mes > 12) {
+			throw new CalendarioMesNoValidoException ();
+			}
 		
-		Internacional cat = new Internacional("internacional."
-				+ conf.getIdiomaEntr());
+		
+		//*Internacional cat = new Internacional("internacional."+ conf.getIdiomaEntr());
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
+		//*SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
 		Calendar dataAny = new GregorianCalendar(any, (mes - 1), 1, 00, 00, 00);
 		Calendar dataAny2 = new GregorianCalendar(any, (mes - 1), 1, 00, 00, 00);
 
-		// int month = dataAny.get(Calendar.MONTH) + 1;
+		//* int month = dataAny.get(Calendar.MONTH) + 1;
 
-		// System.out.println("Primer dia del mes:  " + dataAny.getTime());
-		Date date = new Date();
+		//* System.out.println("Primer dia del mes:  " + dataAny.getTime());
+		//*Date date = new Date();
 		// dataAny.setTime(date);
 		dataAny.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
 		// System.out.println("MONDAY: " + dataAny.getTime());
@@ -173,7 +183,7 @@ public class Calendario {
 		ultimDiaMes = dataAny2.get((Calendar.DAY_OF_MONTH));
 
 		for (int j = 0; j < semanasDelMes; j++) {
-			// System.out.println("bucle j");
+			
 			pertanyAlMes = new boolean[7];
 			for (int i = 0; i < 7; i++) {
 				pertanyAlMes[i] = false;

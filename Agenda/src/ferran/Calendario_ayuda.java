@@ -12,11 +12,11 @@ public class Calendario_ayuda {
 		return numSemanas;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CalendarioMesNoValidoException {
 
 		Configuracion conf = new Configuracion("config.txt");
-		int mes = conf.getMesConf();
-		int any = conf.getAnyConf();
+		int mes = 0;
+		int any = 2008;
 
 		// for (int i = 0; i < calen.size(); i++) {
 		// System.out.println(Arrays.toString(calen.get(0)));

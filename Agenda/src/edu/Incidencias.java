@@ -9,6 +9,8 @@ public class Incidencias {
 	//propiedad privada y estatica en la clase
 	private static Incidencias incidencia;
 	private static List<String> listaIncidencias;
+
+	
 	
 	//constructor de incidencias privado
 	private Incidencias() {

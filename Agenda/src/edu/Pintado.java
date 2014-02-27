@@ -11,7 +11,7 @@ import java.util.Calendar;
 
 public class Pintado {
 	
-	public Pintado (AssigCal obj1, Calendario obj2, Configuracion conf) throws IOException{
+	public Pintado (AssigCal obj1, Calendario obj2, Configuracion conf) throws IOException, CalendarioMesNoValidoException{
 		
 		int numSalas = obj1.getCal_pet().length;
 		
@@ -110,7 +110,7 @@ public class Pintado {
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CalendarioMesNoValidoException {
 		Configuracion conf= new Configuracion("config.txt");
 		
 		

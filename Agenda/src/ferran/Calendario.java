@@ -35,7 +35,7 @@ public class Calendario {
 		this.semana1 = semana1;
 	}
 
-	ArrayList<boolean[]> diesMes = new ArrayList<boolean[]>();
+	
 	boolean[] pertanyAlMes = new boolean[7];
 
 	
@@ -98,6 +98,8 @@ public class Calendario {
 	}
 
 	public ArrayList<boolean[]> trueOFalse(int mes, int any) {
+		ArrayList<boolean[]> diesMes = new ArrayList<boolean[]>();
+		
 		this.mes = mes;
 		this.any = any;
 		

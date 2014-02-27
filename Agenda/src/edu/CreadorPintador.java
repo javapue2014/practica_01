@@ -8,13 +8,15 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
+import amador.AssigCal;
+
 public class CreadorPintador {
 	
 	String mascara= "LMKJVSD";
 	boolean[] verdaderOfalso= {false, false, true,true,true,true,true};
 
 	int primeraSeman= 44;
-	
+	AssigCal obj1=new AssigCal();
 	
 	public CreadorPintador(String doc) throws IOException{
 		File sala= new File(doc+".html");
@@ -22,6 +24,7 @@ public class CreadorPintador {
 		Writer cont = new BufferedWriter(new FileWriter(doc+".html"));
 		
 		int dia=0;
+		int rDia=0;
 		
 		cont.write("<!DOCTYPE html>"
 				+ "<html>"
@@ -66,9 +69,25 @@ public class CreadorPintador {
 							} 	
 						}
 				
-				cont.write("</div></div>");//cierre de semanaCont
+				cont.write("</div>"); //cierre fila
+				
+					for(int h=0; h<24;h++){//filas por num horas
+						cont.write("<div class='fila'>"
+								+ "<div class='enuCol'><h3>"+h+" - "+ (h+1) +"</h3></div>");
+								for(int d=0;d<7;d++){
+									if(!verdaderOfalso[d]){
+									cont.write("<div class='diaNo'><h3>  </h3></div>");
+									}else{
+									rDia++;
+									cont.write("<div class='cel'><h3>"+ obj1.getCal_pet()[0][d][h] +"</h3></div>");
+									} 	
+									
+								}
+						cont.write("</div>");//cierre de fila por hora
 						
-
+					}	
+				
+				cont.write("</div>"); //cierre contenedor semana
 				}
 				
 		cont.write( "</div>"

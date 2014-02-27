@@ -3,35 +3,25 @@ package ferran;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import edu.Configuracion;
+//import edu.Configuracion;
 
 public class Calendario_ayuda {
-	private static int numSemanas;
 
-	public static int getNumSemanas() {
-		return numSemanas;
-	}
+	public static void main(String[] args)
+			throws CalendarioMesNoValidoException {
 
-	public static void main(String[] args) throws CalendarioMesNoValidoException {
+		int mes = 2;
+		int any = 2014;
 
-		Configuracion conf = new Configuracion("config.txt");
-		int mes = 0;
-		int any = 2008;
-
-		// for (int i = 0; i < calen.size(); i++) {
-		// System.out.println(Arrays.toString(calen.get(0)));
-		//
-		// }
-
-		// semana del año
-		// System.out.println("Semana del año :" + Calendario.getSemana1());
-		// semanas que tiene el mes
-		//
-
+		// La classe Calendario genera un ArrayList amb les
+		// setmanes que corresponen a un mes en concret, posant
+		// a fals els dies d'aquella setmana que no corresponen
+		// al mes.
 		ArrayList<boolean[]> calen = new Calendario().trueOFalse(mes, any);
 
-		int numSemanas = calen.size();
-		System.out.println(calen.size());
-
+		// imprimir l'ArraList
+		for (int i = 0; i < calen.size(); i++) {
+			System.out.println(Arrays.toString(calen.get(i)));
+		}
 	}
 }

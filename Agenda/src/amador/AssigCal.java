@@ -12,6 +12,8 @@ import ferran.Utiles_v0;
 public class AssigCal {
 
 	private String[][][] cal_pet = new String[5][32][24];
+	private List <String[][]> cal_petic = new ArrayList<String[][]>();
+
 
 	private void ini_cal_pet() {
 		for (int i = 0; i < cal_pet.length; i++) {
@@ -22,6 +24,8 @@ public class AssigCal {
 			}
 		}
 	}
+	
+	
 
 	public String[][][] getCal_pet() {
 		return cal_pet;
@@ -59,7 +63,7 @@ public class AssigCal {
 			} else {
 				// Si es mes superior, assigna el dia maxim del mes del config + 1
 				// per tal d'assegurar que no faci cap selecció de peticions
-				return cal_conf.getActualMaximum(Calendar.DAY_OF_MONTH) + 1;
+				return cal_conf.getActualMaximum(Calendar.DAY_OF_MONTH)  + 1;
 			}
 		}
 		
@@ -109,6 +113,11 @@ public class AssigCal {
 
 		String[][] peticionsOrdenades = Utiles.sortRequest();
 		String[] dates = new String[3];
+		
+		int num_sales = numSales(peticionsOrdenades);
+		int num_dies_mes = calendario.getActualMaximum(Calendar.DAY_OF_MONTH) + 1;
+		
+		//String[][][] cal_peti = new String[num_sales][num_dies_mes][24];
 
 		ini_cal_pet();
 
@@ -195,6 +204,21 @@ public class AssigCal {
 		}
 
 	}
+
+
+	private int numSales(String[][] peticionsOrdenades) {
+		int k = 0;
+		String sala = "";
+		for (int i = 0; i < peticionsOrdenades.length; i++) {
+			if (peticionsOrdenades[i][1] != sala){
+				k++;
+				sala = peticionsOrdenades[i][1];
+			}
+		}
+		return k+1;
+	}
+
+
 
 	private int diaSetmana(Calendar calendario) {
 		int dia = calendario.get(Calendar.DAY_OF_WEEK) - 1;

@@ -186,7 +186,7 @@ public class Utiles {
 		int k = 0;
 		String sala = "";
 		for (int i = 0; i < peticiones.lista.size(); i++) {
-			if (!peticiones.lista.get(i)[0].equals(sala)) {
+			if (!peticiones.lista.get(i)[1].equals(sala)) {
 				k++;
 				sala = peticiones.lista.get(i)[1];
 			}

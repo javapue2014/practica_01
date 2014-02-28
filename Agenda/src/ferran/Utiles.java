@@ -11,12 +11,10 @@ import edu.Configuracion;
 import edu.Lectura;
 import edu.Prioridades;
 
-
-
 public class Utiles {
-	
-	private int nSales = 0;
-	
+
+	private static int nSales = 0;
+
 	private static boolean hiHaPrioritats = false;
 	static String[] paraulesClau;
 
@@ -120,7 +118,6 @@ public class Utiles {
 			} // acaba el primer for de peticions
 		} // acaba if de hiHaPrioritats
 
-		
 		for (int i = 0; i < (peticiones.lista.size()); i++) {
 
 			if (!filtrat[i])
@@ -141,8 +138,6 @@ public class Utiles {
 		// + peticionsSales.get(i).getEspai());
 		// }
 
-		
-		
 		for (int i = 0; i < peticionsSales.size(); i++) {
 			arrayPeticions[i][0] = peticionsSales.get(i).getActivitat();
 			arrayPeticions[i][1] = peticionsSales.get(i).getEspai();
@@ -164,26 +159,39 @@ public class Utiles {
 		});
 
 		// imprimeix després d'ordenar
-//		System.out.println("------------------------------------");
-//
-//		for (int i = 0; i < peticionsSales.size(); i++) {
-//			System.out.println(Arrays.toString(arrayPeticions[i]));
-//		}
-		
+		// System.out.println("------------------------------------");
+		//
+		// for (int i = 0; i < peticionsSales.size(); i++) {
+		// System.out.println(Arrays.toString(arrayPeticions[i]));
+		// }
+
 		return arrayPeticions;
 
 	} // acaba el main
 
-	public static int numSales(String[][] peticionsOrdenades) {
+//	public static int numSales(String[][] peticionsOrdenades) {
+//		int k = 0;
+//		String sala = "";
+//		for (int i = 0; i < peticionsOrdenades.length; i++) {
+//			if (!peticionsOrdenades[i][1].equals(sala)) {
+//				k++;
+//				sala = peticionsOrdenades[i][1];
+//			}
+//		}
+//		return k + 1;
+//	}
+
+	public static int numSales() {
+		Lectura peticiones = new Lectura("peticions.txt");
 		int k = 0;
 		String sala = "";
-		for (int i = 0; i < peticionsOrdenades.length; i++) {
-			if (!peticionsOrdenades[i][1].equals(sala)){
+		for (int i = 0; i < peticiones.lista.size(); i++) {
+			if (!peticiones.lista.get(i)[0].equals(sala)) {
 				k++;
-				sala = peticionsOrdenades[i][1];
+				sala = peticiones.lista.get(i)[0];
 			}
 		}
-		return k+1;
+		return k + 1;
 	}
 
 }

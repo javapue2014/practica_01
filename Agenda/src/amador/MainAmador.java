@@ -17,6 +17,19 @@ import ferran.Utiles_v0;
 public class MainAmador {
 
 	public static void main(String[] args) {
+		
+		AssignarCalendari calen = new AssignarCalendari();
+		
+		String pepe[][][] = calen.AssignarCal();
+		
+		for (int y = 0; y < pepe.length; y++) {
+			System.out.println("SALA" + y);
+			for (int z = 0; z < pepe[0].length; z++) {
+				System.out.println("Dia: " + z);
+				System.out.println(Arrays.toString(pepe[y][z]));
+			}
+		}
+
 
 		Configuracion conf = new Configuracion("config.txt");
 
@@ -49,6 +62,16 @@ public class MainAmador {
 
 		int mes = conf.getMesConf();
 		int any = conf.getAnyConf();
+		
+		String [][][] cal_peticions = cal.getCal_pet();
+		
+		for (int y = 0; y < cal_peticions.length; y++) {
+			System.out.println("SALA" + y);
+			for (int z = 0; z < cal_peticions[0].length; z++) {
+				System.out.println("Dia: " + z);
+				System.out.println(Arrays.toString(cal_peticions[y][z]));
+			}
+		}
 
 		System.out.println("any:" + calendario.get(Calendar.YEAR) + " mes: "
 				+ calendario.get(Calendar.MONTH) + 1 + " dia: "
@@ -79,6 +102,13 @@ public class MainAmador {
 		System.out.println("Any: " + calendario.get(Calendar.YEAR) + "; Mes:  "
 				+ (calendario.get(Calendar.MONTH) + 1));
 
+		for (int y = 0; y < cal_peticions.length; y++) {
+			System.out.println("SALA" + y);
+			for (int z = 0; z < cal_peticions[0].length; z++) {
+				System.out.println("Dia: " + z);
+				System.out.println(Arrays.toString(cal_peticions[y][z]));
+			}
+		}
 	}
 
 }

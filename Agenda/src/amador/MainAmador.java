@@ -20,7 +20,8 @@ public class MainAmador {
 		
 		AssignarCalendari calen = new AssignarCalendari();
 		
-		String pepe[][][] = calen.AssignarCal();
+		String pepe[][][] = calen.assignarCal();
+		int salas = calen.numeroSalas();
 		
 		for (int y = 0; y < pepe.length; y++) {
 			System.out.println("SALA" + y);

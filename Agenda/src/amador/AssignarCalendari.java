@@ -15,8 +15,14 @@ import ferran.Utiles;
 import ferran.Utiles_v0;
 
 public class AssignarCalendari {
+	
+	public static int numeroSalas() {
+		AssigCal cal = new AssigCal();
+		return cal.getNumSalas();		
+	}
+	
 
-	public static String[][][] AssignarCal() {
+	public static String[][][] assignarCal() {
 
 		Configuracion conf = new Configuracion("config.txt");
 

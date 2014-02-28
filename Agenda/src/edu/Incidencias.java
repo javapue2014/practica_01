@@ -2,19 +2,24 @@ package edu;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Incidencias {
 	//patrón Singleton
 	//propiedad privada y estatica en la clase
 	private static Incidencias incidencia;
 	private static List<String> listaIncidencias;
+	private static Map<String,String> mapaColisiones;
 
 	
 	
 	//constructor de incidencias privado
 	private Incidencias() {
 		listaIncidencias = new ArrayList<String>();
+		mapaColisiones= new HashMap<>();
 	}
 	
 	//getter para incidencia que se instancia una vez si no esta instanciado
@@ -30,7 +35,9 @@ public class Incidencias {
 		listaIncidencias.add(x);
 	}
 
-	
+	public void putColision(String k, String v) {
+		mapaColisiones.put(k, v);
+	}
 	
 	public void volcado() {
 		
@@ -44,11 +51,6 @@ public class Incidencias {
 			
 				Writer incidencia = new BufferedWriter(
 						new FileWriter("incidencias.log"));
-				//
-				//
-				//repasar y convertir a singelton configuracion
-				Configuracion conf= new Configuracion("config.txt");
-				incidencia.write("#Resum Activitats "+conf.getMesConf()+"/"+conf.getAnyConf()+ "#Activitat ReunioC");
 				
 				
 				for(int i=0; i< listaIncidencias.size();i++){	
@@ -56,6 +58,11 @@ public class Incidencias {
 						incidencia.write(listaIncidencias.get(i));
 					
 					}
+				
+				for (Entry<String, String> s : mapaColisiones.entrySet()) {
+					s.getKey();
+					s.getValue();
+				}
 				
 				incidencia.close();
 				

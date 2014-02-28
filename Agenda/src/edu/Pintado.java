@@ -11,9 +11,19 @@ import java.util.Calendar;
 
 public class Pintado {
 	
-	public Pintado (AssigCal obj1, Calendario obj2, Configuracion conf) throws IOException, CalendarioMesNoValidoException{
+	public Pintado ( Calendario obj2, Configuracion conf) throws IOException, CalendarioMesNoValidoException{
 		
-		int numSalas = obj1.getCal_pet().length;
+		Calendar calendar= Calendar.getInstance();
+		calendar.set(conf.getAnyConf(), (conf.getMesConf()-1), 1);
+		
+		AssignarCalendari calen=new AssignarCalendari();
+		
+		String cal[][][]=calen.assignarCal();
+		
+		
+		
+		
+		int numSalas = calen.numeroSalas();
 		
 		//bucle generador de tantos ficheros html como num de salas
 		for(int k=1;k<numSalas;k++){
@@ -82,10 +92,15 @@ public class Pintado {
 							if(!obj2.trueOFalse(conf.getMesConf(), conf.getAnyConf()).get(l)[d]){
 							cont.write("<div class='diaNo'><h3>  </h3></div>");
 							}else{
-							rDia++;
-							cont.write("<div class='cel'><h3>"+ obj1.getCal_pet()[k][d][h] +"</h3></div>");
+							
+							cont.write("<div class='cel'><h3>"+ cal[k][rDia][h] +"</h3></div>");
+							if (rDia < calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+								rDia++;
+							}	
+							
+							
 							} 	
-										
+									
 						}
 						cont.write("</div>");//cierre de fila por hora
 							
@@ -119,7 +134,7 @@ public class Pintado {
 		Calendario obj2= new Calendario();
 				
 		try {
-			Pintado j= new Pintado (obj1, obj2, conf);
+			Pintado j= new Pintado ( obj2, conf);
 			System.out.println("Fin");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

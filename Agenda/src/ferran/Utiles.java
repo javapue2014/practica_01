@@ -11,8 +11,12 @@ import edu.Configuracion;
 import edu.Lectura;
 import edu.Prioridades;
 
-public class Utiles {
 
+
+public class Utiles {
+	
+	private int nSales = 0;
+	
 	private static boolean hiHaPrioritats = false;
 	static String[] paraulesClau;
 
@@ -169,5 +173,17 @@ public class Utiles {
 		return arrayPeticions;
 
 	} // acaba el main
+
+	private int numSales(String[][] peticionsOrdenades) {
+		int k = 0;
+		String sala = "";
+		for (int i = 0; i < peticionsOrdenades.length; i++) {
+			if (!peticionsOrdenades[i][1].equals(sala)){
+				k++;
+				sala = peticionsOrdenades[i][1];
+			}
+		}
+		return k+1;
+	}
 
 }

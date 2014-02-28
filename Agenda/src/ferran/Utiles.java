@@ -174,7 +174,7 @@ public class Utiles {
 
 	} // acaba el main
 
-	public int numSales(String[][] peticionsOrdenades) {
+	public static int numSales(String[][] peticionsOrdenades) {
 		int k = 0;
 		String sala = "";
 		for (int i = 0; i < peticionsOrdenades.length; i++) {

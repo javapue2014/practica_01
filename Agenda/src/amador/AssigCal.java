@@ -13,7 +13,7 @@ public class AssigCal {
 	private String[][][] cal_pet = new String[5][32][24];
 
 	public int getNumSalas() {
-		return Utiles.numSales();
+		return Utiles.qSales();
 	}
 
 	private void ini_cal_pet() {

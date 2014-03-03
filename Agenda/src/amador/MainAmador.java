@@ -23,7 +23,7 @@ public class MainAmador {
 		String pepe[][][] = calen.assignarCal();
 		int salas = calen.numeroSalas();
 		
-		for (int y = 0; y < pepe.length; y++) {
+º		for (int y = 0; y < pepe.length; y++) {
 			System.out.println("SALA" + y);
 			for (int z = 0; z < pepe[0].length; z++) {
 				System.out.println("Dia: " + z);

@@ -12,8 +12,8 @@ public class Incidencias {
 	//propiedad privada y estatica en la clase
 	private static Incidencias incidencia;
 	private static List<String> listaIncidencias;
-	private static Map<String,String> mapaColisiones;
-
+	private static Map<String,ArrayList<String>> mapaColisiones;
+	private Configuracion conf= new Configuracion("config.txt");
 	
 	
 	//constructor de incidencias privado
@@ -36,7 +36,18 @@ public class Incidencias {
 	}
 
 	public void putColision(String k, String v) {
-		mapaColisiones.put(k, v);
+		ArrayList<String> temp = mapaColisiones.get(k);
+		if(temp==null){//si el valor es nulo crea una arraylist para esa clave
+			mapaColisiones.put(k, new ArrayList<String>());	
+			mapaColisiones.get(k).add(v);
+		}else{
+			mapaColisiones.get(k).add(v);
+		}
+		
+		
+		
+
+		
 	}
 	
 	public void volcado() {
@@ -59,14 +70,24 @@ public class Incidencias {
 					
 					}
 				
-				for (Entry<String, String> s : mapaColisiones.entrySet()) {
-					s.getKey();
-					s.getValue();
+				incidencia.write("#Resum Activitats" + conf.getMesConf()+"/"+ conf.getAnyConf() + "/n");
+				
+				
+				for (Entry<String, ArrayList<String>> s : mapaColisiones.entrySet()) {
+					
+					
+					incidencia.write("#Activitat "+s.getKey());
+					for(int l=0; l< mapaColisiones.get(s.getKey()).size();l++){
+					incidencia.write(s.getValue().get(l));
+					}
+					
+					
+					
 				}
 				
 				incidencia.close();
 				
-				
+						
 				} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -69,7 +69,7 @@ public class Configuracion {
 		} catch (FileNotFoundException e) {
 			//recupero el objeto incidencia con getIncidencia() y le añado la incidencia
 			Incidencias miIncidencia = Incidencias.getIncidencia();
-			miIncidencia.addIncidencia("El fichero "+ x +  " no ha sido encontrado");	
+			miIncidencia.addIncidencia("El fichero no ha sido encontrado");	
 			
 		} catch (IOException e) {		
 			//recupero el objeto incidencia con getIncidencia() y le añado la incidencia

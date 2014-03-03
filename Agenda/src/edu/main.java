@@ -2,6 +2,10 @@ package edu;
 import java.util.Arrays;
 import java.io.*;
 
+import amador.*;
+import ferran.*;
+
+
 
 
 
@@ -9,12 +13,12 @@ public class main {
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CalendarioMesNoValidoException {
 		
 
 	
 		
-	
+/*	
 		Configuracion conf= new Configuracion("config.txt");		
 		Lectura idiomaEntrada= new Lectura("internacional.CAT");	
 		Lectura idiomaSalida= new Lectura("internacional.ENG");
@@ -32,10 +36,7 @@ public class main {
 		System.out.println( peticiones.lista.get(3).length);
 		System.out.println( Arrays.toString(idiomaSalida.lista.get(3)));
 		
-		
-		Logger miLog = Logger.getLogger();
-		miLog.addLog("Hola");
-		
+
 		
 		
 		Internacional cat = new Internacional("internacional."+conf.getIdiomaEntr());
@@ -55,10 +56,21 @@ public class main {
 		
 		
 		
-	Prioridades prio=new Prioridades(conf);
-	for(int i=0; i<prio.getPrioridad().size();i++)
-		System.out.println(prio.getPrioridad().get(i));
+
 
 	
 	System.out.println(conf.getIdiomaEntrada().getInterDoc());
+//--------------------------------------------------------------------------
+*/
+	Configuracion conf= new Configuracion("config.txt");
+
+	Calendario obj2= new Calendario();
+			
+	try {
+		Pintado j= new Pintado ( obj2, conf);
+		System.out.println("Fin");
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 }}

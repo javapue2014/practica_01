@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	height: 100%;
+	width: 100%;
+	background-color:#ccc;
+	font-family: arial, sans-serif;
+	font-size: 0.68em;
+}
+
+h1 {
+	font-size: 3.25em;
+	letter-spacing: -0,2%;
+	line-height: 1.25em;	
+}
+
+h2{
+	font-size: 2.25em;
+	letter-spacing: -0,2%;
+	line-height: 1.25em;	
+	margin:1%;
+	padding:0%;	
+}
+h3{
+	font-size: 1.25em;
+	letter-spacing: -0,1%;
+	line-height: 1.25em;	
+	margin:1%;
+	padding:0%;
+}
+
+#contenedor{
+	display: table;
+
+    heigth:100%;
+    width:auto;
+    max-width: 1000px;
+    background-color: #fff;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.semanaCont {
+    display: table;
+
+    border: 2px solid #000;
+    heigth:100%;
+    width:auto;
+
+    background-color: #333;
+    text-align: center;
+    margin: 0 0 50px 0px;
+}
+.fila{
+    display: table-row;
+    width: 100%;
+    
+    min-height:50px;
+    height: auto;
+    background-color: #fff  
+    
+}
+.enuCol{
+	display: table-cell;
+	min-width: 80px;
+    width: 16%;
+    height:auto;
+    border: 1px solid #000;
+    vertical-align: middle;
+}
+.cel{
+    display: table-cell;
+    min-width: 50px;
+    width: 12%;
+    height:auto;
+    border: 1px solid #000;
+    vertical-align: middle;
+    padding: 12px;
+}
+.diaNo{
+	display: table-cell;
+	 min-width: 50px;
+	width: 12%;
+	height:auto;
+	border: 1px solid #000;
+	background-color: #999;color:#999;
+	
+}

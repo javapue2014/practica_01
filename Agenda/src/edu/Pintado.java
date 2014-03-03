@@ -18,11 +18,8 @@ public class Pintado {
 		
 		AssignarCalendari calen=new AssignarCalendari();
 		
-		String cal[][][]=calen.assignarCal();
-		
-		
-		
-		
+		String cal[][][]=calen.assignarCal();		
+				
 		int numSalas = calen.numeroSalas();
 		
 		//bucle generador de tantos ficheros html como num de salas
@@ -125,21 +122,8 @@ public class Pintado {
 	}
 	
 	
-	public static void main(String[] args) throws CalendarioMesNoValidoException {
-		Configuracion conf= new Configuracion("config.txt");
+/*	public static void main(String[] args) throws CalendarioMesNoValidoException {
 		
-		
-		
-		AssigCal obj1= new AssigCal ();
-		Calendario obj2= new Calendario();
-				
-		try {
-			Pintado j= new Pintado ( obj2, conf);
-			System.out.println("Fin");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	}*/
 }
 

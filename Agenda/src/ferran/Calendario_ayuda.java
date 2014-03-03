@@ -24,5 +24,11 @@ public class Calendario_ayuda {
 		for (int i = 0; i < calen.size(); i++) {
 			System.out.println(Arrays.toString(calen.get(i)));
 		}
+		
+		int i = Utiles.qSales();
+		
+		System.out.println(i);
+		
+		
 	}
 }

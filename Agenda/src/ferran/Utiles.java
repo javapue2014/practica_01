@@ -185,5 +185,17 @@ public class Utiles {
 		}
 		return k+1;
 	}
+	
+	
+	public static int qSales () {
+		
+		String[][] utils = new Utiles().sortRequest();
+		LinkedHashSet<String> set = new LinkedHashSet<String>();
+		for (int j = 0; j < utils.length; j++) {
+				set.add(utils[j][1]);		
+		}
+		
+		return set.size();
+	}
 
 }
